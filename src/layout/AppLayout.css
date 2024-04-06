@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "EASTARJET-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/EASTARJET-Medium.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+.main-style {
+background-color: black;
+height: 100vh;
+}
+.nav-style {
+  font-family: "EASTARJET-Medium";
+  background-color: black;
+  color: white;
+  height: 56px;
+}
+.nav-style .me-2 {
+  border-radius: 20px;
+  font-family: "EASTARJET-Medium";
+}
+.search-button {
+  border-radius: 30px;
+  font-family: "EASTARJET-Medium";
+}
+img{
+    width: 100px;
+}

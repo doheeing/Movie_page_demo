@@ -1,7 +1,40 @@
-.not-found-page{
-    height: 100vh;
-    background-image: url("https://cdn.dribbble.com/users/256291/screenshots/3286836/attachments/708203/404_dark.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+@font-face {
+  font-family: "EASTARJET-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/EASTARJET-Medium.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+.not-found-page {
+  height: 100vh;
+  background-image: url(https://img.freepik.com/free-vector/color-seamless-space-pattern_102902-2360.jpg?w=996&t=st=1712407747~exp=1712408347~hmac=96da6e9aa0c3cff78e8c666e715462db87237fbf446c1dabe1adaf76e0435b6e);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.error-message {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  font-family: "EASTARJET-Medium";
+}
+.error-message h1 {
+  font-size: 200px;
+}
+.error-message h3 {
+  font-size: 50px;
+}
+.error-page-button {
+  border: 2px solid white;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 15px;
 }
