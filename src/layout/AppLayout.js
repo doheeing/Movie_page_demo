@@ -1,5 +1,5 @@
 import React from "react";
-import "./AppLayout.css";
+import "./AppLayout.style.css";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -10,9 +10,11 @@ import { Outlet } from "react-router-dom";
 const AppLayout = () => {
   return (
     <div className="main-style">
-      <Navbar expand="lg" className="nav-style" variant="dark">
+      <Navbar expand="lg" className="nav-style py-3 px-5" variant="dark">
         <Container fluid>
-          <Navbar.Brand href="#"><img src="img/main_logo.jpg"/></Navbar.Brand>
+          <Navbar.Brand href="#">
+            <img src="img/main_logo.jpg" />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -30,7 +32,9 @@ const AppLayout = () => {
                 className="me-2"
                 aria-label="Search"
               />
-              <Button variant="outline-danger" className="search-button">Search</Button>
+              <Button variant="outline-danger" className="search-button">
+                Search
+              </Button>
             </Form>
           </Navbar.Collapse>
         </Container>
