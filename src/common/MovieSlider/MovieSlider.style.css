@@ -1,9 +1,25 @@
 .carousel-container{
     overflow: hidden;
-    height: 440px;
+    height: 100%
+}
+.carousel-container {
+  overflow: hidden;
+  height: 460px;
+}
+.movie-slider-area{
+    position: relative;
 }
 .movie-slider-area h3{
     text-align: center;
     font-size: 40px;
-    font-family: 'WavvePADO-Regular';
+    font-family: "GmarketSansMedium";
+    margin-bottom: 20px;
+}
+.movie-slider {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  flex: 1 !important;
+  gap: 50px !important;
+  width: 430px !important;
 }

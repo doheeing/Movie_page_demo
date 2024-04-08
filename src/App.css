@@ -39,3 +39,6 @@ body{
   background-color: black !important;
 color: white !important;
 }
+.react-multi-carousel-track {
+height: 100%;
+}

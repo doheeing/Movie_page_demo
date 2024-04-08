@@ -8,31 +8,31 @@ const MovieCard = ({ movie }) => {
       style={{
         backgroundImage:
           "url(" +
-          `https://media.themoviedb.org/t/p/w300_and_h450_bestv2${movie?.poster_path}` +
+          `https://media.themoviedb.org/t/p/w600_and_h900_bestv2${movie.backdrop_path}` +
           ")",
       }}
       className="movie-card"
     >
       <div className="overlay">
-        <h1>{movie?.title}</h1>
-        <p>
-          {movie?.genre_ids.map((id) => (
-            <Badge bg="danger">{id}</Badge>
-          ))}
-        </p>
-
-        <div>{movie?.vote_average}</div>
-        <div>{movie?.popularity}</div>
-        <div>
-          {movie?.adult ? (
-            <Badge pill bg="danger">
-              18
-            </Badge>
-          ) : (
-            <Badge pill bg="primary">
-              All
-            </Badge>
-          )}
+        <div
+          style={{
+            backgroundImage:
+              "url(" +
+              `https://media.themoviedb.org/t/p/w600_and_h900_bestv2${movie.poster_path}` +
+              ")",
+          }}
+          className="movie-poster"
+        ></div>
+        <div className="movie-text">
+          <h1>{movie.title}</h1>
+          <div className="card-genre">
+            {movie.genre_ids.map((id) => (
+              <Badge bg="danger">{id}</Badge>
+            ))}
+          </div>
+          <div>average : {movie.vote_average}</div>
+          <div>popularity : {movie.popularity}</div>
+          <div>adult : {movie.adult ? "over 18" : "ALL"}</div>
         </div>
       </div>
     </div>

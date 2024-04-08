@@ -1,13 +1,16 @@
-import React from 'react'
+import React from "react";
 import Alert from "react-bootstrap/Alert";
 import MovieSlider from "../../../../common/MovieSlider/MovieSlider";
 import { responsive } from "../../../../constants/responsive";
-import { usePopularMoviesQuery } from '../../../../hooks/usePopularMovies';
+import { useTopRatedMovies } from "../../../../hooks/useTopRatedMovies";
+import { PropagateLoader } from "react-spinners";
 
-const TopRatedMovie = () => {
-  const { data, isLoading, isError, error } = usePopularMoviesQuery()
+const TopRatedMovieSlide = () => {
+  const { data, isLoading, isError, error } = useTopRatedMovies();
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return (
+      <PropagateLoader color="#ee8282" cssOverride={{}} loading size={10} />
+    );
   }
   if (isError) {
     return <Alert variant="danger">{error.message}</Alert>;
@@ -23,4 +26,4 @@ const TopRatedMovie = () => {
   );
 };
 
-export default TopRatedMovie
+export default TopRatedMovieSlide;

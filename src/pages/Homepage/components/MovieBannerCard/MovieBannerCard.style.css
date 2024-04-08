@@ -1,0 +1,32 @@
+.banner-movie-card {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
+.banner-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(43, 41, 41, 0.4);
+  opacity: 0;
+  transition: all 0.5s;
+  color: white;
+  font-weight: bold;
+  overflow-wrap: break-word;
+  font-family: "GmarketSansMedium";
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding:100px;
+}
+.banner-overlay:hover {
+  opacity: 1;
+}
+.banner-movie-card h1 {
+  font-size: 30px;
+}
+.banner-movie-card p {
+  font-size: 15px;
+}

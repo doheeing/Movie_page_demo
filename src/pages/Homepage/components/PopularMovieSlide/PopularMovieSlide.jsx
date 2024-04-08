@@ -3,11 +3,14 @@ import { usePopularMoviesQuery } from "../../../../hooks/usePopularMovies";
 import Alert from "react-bootstrap/Alert";
 import MovieSlider from "../../../../common/MovieSlider/MovieSlider";
 import { responsive } from "../../../../constants/responsive";
+import { PropagateLoader } from "react-spinners";
 
 const PopularMovieSlide = () => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return (
+      <PropagateLoader color="#ee8282" cssOverride={{}} loading size={10} />
+    );
   }
   if (isError) {
     return <Alert variant="danger">{error.message}</Alert>;
