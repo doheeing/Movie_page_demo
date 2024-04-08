@@ -30,19 +30,19 @@ const PopularMovieSlide = () => {
     <Alert variant="danger">{error.message}</Alert>;
   }
   return (
-    <div>
+    <div className="popular-movie-area">
       <h3>Popular Movie</h3>
-      <Carousel
+      {/* <Carousel
         infinite={true}
         centerMode={true}
         itemClass="movie-slider p-1"
         containerClass="carousel-container"
         responsive={responsive}
-      >
-        {data.results.map((movie, index) => (
+      > */}
+        {data?.results.map((movie, index) => (
           <MovieCard movie={movie} key={index} />
         ))}
-      </Carousel>
+      {/* </Carousel> */}
       ;
     </div>
   );

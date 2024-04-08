@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import api from "../utils/api";
 
-console.log("api", api)
 const fetchPopularMovies = () => {
   return api.get(`/movie/popular`);
 };

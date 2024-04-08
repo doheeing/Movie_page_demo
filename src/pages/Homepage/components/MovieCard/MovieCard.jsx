@@ -1,6 +1,6 @@
 import React from "react";
-import "./MovieCard.style.css"
-import Badge from 'react-bootstrap/Badge';
+import "./MovieCard.style.css";
+import Badge from "react-bootstrap/Badge";
 
 const MovieCard = ({ movie }) => {
   return (
@@ -20,10 +20,11 @@ const MovieCard = ({ movie }) => {
             <Badge bg="danger">{id}</Badge>
           ))}
         </p>
+
+        <div>{movie?.vote_average}</div>
+        <div>{movie?.popularity}</div>
+        <div>{movie?.adult ? "over18" : "under18"}</div>
       </div>
-      <div>{movie?.vote_average}</div>
-      <div>{movie?.popularity}</div>
-      <div>{movie?.adult?"over18":"under18"}</div>
     </div>
   );
 };

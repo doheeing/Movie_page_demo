@@ -1,28 +1,32 @@
-
-.banner{
-    height: 56vh;
-    background-position: left;
-    background-repeat: no-repeat;
-    background-size: cover;
-
+.banner {
+  height: 56vh;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.banner::before{
-    content: '';
-    background: linear-gradient(to top, black, transparent);
-    position: absolute;
-    left: 0;
-    height: 56vh;
-    width: 100%;
+.banner::before {
+  content: "";
+  background: linear-gradient(to top, black, transparent);
+  position: absolute;
+  left: 0;
+  height: 56vh;
+  width: 100%;
 }
-.banner-text-area{
-    width: 36%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    height: 100%;
-    padding: 2rem;
+.banner-text-area {
+  width: 36%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  padding: 2rem;
 }
-.banner-text-area > *{
-    z-index: 2;
-    font-family: 'TTHakgyoansimMoheomgaB';
+.banner-text-area > * {
+  z-index: 2;
+}
+.banner-text-area h1 {
+  font-family: "TTLaundryGothicB";
+}
+.banner-text-area p {
+  font-weight: 100;
+  font-family: "GmarketSansMedium";
 }

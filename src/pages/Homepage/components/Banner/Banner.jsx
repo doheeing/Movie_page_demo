@@ -6,6 +6,7 @@ import Alert from "react-bootstrap/Alert";
 const Banner = () => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
   console.log("DDD", data);
+  
   if (isLoading) {
     <h1>Loading...</h1>;
   }

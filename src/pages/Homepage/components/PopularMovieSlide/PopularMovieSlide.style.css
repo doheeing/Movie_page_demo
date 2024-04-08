@@ -2,3 +2,9 @@
     overflow: hidden;
     height: 440px;
 }
+.popular-movie-area{
+    font-family: "GmarketSansMedium";
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
