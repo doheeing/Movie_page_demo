@@ -1,0 +1,9 @@
+.carousel-container{
+    overflow: hidden;
+    height: 440px;
+}
+.movie-slider-area h3{
+    text-align: center;
+    font-size: 40px;
+    font-family: 'WavvePADO-Regular';
+}

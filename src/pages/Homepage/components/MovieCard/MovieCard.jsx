@@ -23,7 +23,17 @@ const MovieCard = ({ movie }) => {
 
         <div>{movie?.vote_average}</div>
         <div>{movie?.popularity}</div>
-        <div>{movie?.adult ? "over18" : "under18"}</div>
+        <div>
+          {movie?.adult ? (
+            <Badge pill bg="danger">
+              18
+            </Badge>
+          ) : (
+            <Badge pill bg="primary">
+              All
+            </Badge>
+          )}
+        </div>
       </div>
     </div>
   );
