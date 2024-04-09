@@ -11,6 +11,8 @@ const BannerMovieSlider = ({ movies, responsive }) => {
         containerClass="carousel-container"
         responsive={responsive}
         className="banner-slide-area-carosel"
+        autoPlay
+        autoPlaySpeed={5000}
       >
         {movies?.map((movie, index) => (
           <MovieBannerCard movie={movie} key={index} />

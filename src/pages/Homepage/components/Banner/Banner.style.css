@@ -1,4 +1,24 @@
+/* .gradient-overlay {
+  position: relative;
+  font-family: "GmarketSansMedium";
+}
+
+.gradient-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, black, transparent);
+}
+
+@media only screen and (max-width: 767px) {
+  .overview {
+    display: none;
+  }
+} */
 .banner{
-    height: 600px;
+    margin-top: 50px;
     margin-bottom: 50px;
 }

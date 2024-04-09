@@ -3,7 +3,13 @@
   font-size: 40px;
   font-family: "GmarketSansMedium";
   height: 100%;
+
 }
 .banner-slide-area-carosel{
   height: 100%;
 }
+.carousel-container{
+    overflow: hidden;
+    height: 440px;
+}
+
