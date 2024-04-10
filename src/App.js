@@ -15,16 +15,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
+    <div>
       <Routes>
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Homepage />} />
-          <Route path="movies">
+          <Route path="/movies">
             <Route index element={<MoviePage />} />
             <Route path=":id" element={<MovieDetailPage />} />
           </Route>
         </Route>
+
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+    </div>
   );
 }
 
