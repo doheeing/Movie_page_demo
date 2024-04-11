@@ -21,7 +21,7 @@
 }
 @media only screen and (max-width: 767px) {
   .movie-slider-area h3 {
-    font-size: 20px;
+    font-size: 35px;
   }
   .movie-slider {
     width: 300px !important;

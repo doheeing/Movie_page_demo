@@ -3,19 +3,20 @@ background-color: black;
 height: 100vh;
 }
 .nav-style {
-  font-family: "EASTARJET-Medium";
+  font-family: 'Pretendard-Regular';
   background-color: black;
   color: white;
   height: 70px;
   padding-top: 15px;
+  font-size: 20px;
 }
 .nav-style .me-2 {
   border-radius: 20px;
-  font-family: "EASTARJET-Medium";
+  font-family: 'Pretendard-Regular';
 }
 .search-button {
   border-radius: 30px;
-  font-family: "EASTARJET-Medium";
+  font-family: 'Pretendard-Regular';
 }
 img{
     width: 100px;

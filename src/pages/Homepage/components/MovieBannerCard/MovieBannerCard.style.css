@@ -1,29 +1,13 @@
 .banner-movie-card {
-position: relative;
-margin: 10px;
+  /* position: relative; */
+  margin: 10px;
+  cursor: pointer;
 }
-.banner-overlay {
-  height: 5px;
-  width: 100%;
-  background: rgba(43, 41, 41, 0.4);
-  opacity: 0;
-  transition: all 0.5s;
-  color: white;
-  font-weight: bold;
-  overflow-wrap: break-word;
-  font-family: "GmarketSansMedium";
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-direction: column;
-  
+.banner-movie-card:hover {
+  transform: scale(1.1);
+  z-index: 2;
 }
-.banner-overlay:hover {
-  opacity: 1;
-}
-.banner-movie-card h1 {
-  font-size: 30px;
-}
+
 @media only screen and (max-width: 767px) {
   .banner-overlay {
     display: none;

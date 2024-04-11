@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import AppLayout from "./layout/AppLayout";
+import AppLayout from "./layout/Navbar/AppLayout";
 import Homepage from "./pages/Homepage/Homepage";
 import MovieDetailPage from "./pages/MovieDetail/MovieDetailPage";
 import MoviePage from "./pages/Movies/MoviePage";
@@ -17,7 +17,7 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<AppLayout />}>
+        <Route path="/" element={<AppLayout/>}>
           <Route index element={<Homepage />} />
           <Route path="/movies">
             <Route index element={<MoviePage />} />
