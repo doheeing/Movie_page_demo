@@ -24,7 +24,7 @@ const AppLayout = () => {
           <Navbar.Brand href="/">
             <img src="img/main_logo.jpg" />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Toggle aria-controls="navbarScroll" className="toggle" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
               className="me-auto my-2 my-lg-0"
@@ -38,7 +38,7 @@ const AppLayout = () => {
                 영화
               </Nav.Link>
             </Nav>
-            <Form className="d-flex" onSubmit={searchByKeyword}>
+            <Form className="d-flex nav-bar-search" onSubmit={searchByKeyword}>
               <Form.Control
                 type="search"
                 placeholder="Search"

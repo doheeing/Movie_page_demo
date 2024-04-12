@@ -1,0 +1,18 @@
+.movie-slider-recommand {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  flex: 1 !important;
+  gap: 100px !important;
+  width: 400px !important;
+}
+.carousel-container-recommand {
+  overflow: hidden;
+  height: 100%;
+}
+.detail-recommend-wrap h3 {
+  font-size: 40px;
+  font-family: "BagelFatOne-Regular";
+  text-align: center;
+  margin-bottom: 20px;
+}

@@ -1,6 +1,6 @@
-.movie-card {
-  width: 280px;
-  height: 420px;
+.movie-card-recommand {
+  width: 350px;
+  height: 150px;
   background-size: cover;
   border-radius: 10px;
   transition: all 0.3s;
@@ -51,7 +51,7 @@
 }
 .badge {
   margin-right: 5px;
-  border: none;
+
 }
 .ranking{
   color: white;

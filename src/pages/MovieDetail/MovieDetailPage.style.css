@@ -1,23 +1,29 @@
+main-body {
+  height: 180vh;
+}
 .detail-movie-poster {
-  height: 90vh;
+  height: 150vh;
   width: 100vw;
   backdrop-filter: blur(10px);
+  margin: 0;
 }
-.blur-area{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(13, 13, 13, 0.406);
-    backdrop-filter: blur(50px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.blur-area {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(13, 13, 13, 0.406);
+  backdrop-filter: blur(50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.container{
-    justify-content: center;
-    align-items: center;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
-.first-row {
-  margin-top: 5rem;
+.movie-detail-page-first-row {
+  margin-bottom: 150px;
 }
 .second-col {
   display: flex;
@@ -64,4 +70,19 @@
 .detail-base-line {
   font-family: "GmarketSansMedium";
   font-size: 15px;
+}
+.movie-recommend-area {
+  margin-top: 30px;
+}
+.recommend-title{
+   font-family: "GmarketSansMedium";
+  font-size: 25px;
+}
+.movie-detail-recommend{
+  height: 40vh;
+  width: 100vw;
+  margin-top: 50px !important;
+  z-index: 2 !important;
+  padding-top: 30px;
+  border-top: 1px solid rgba(130, 128, 128, 0.181);
 }

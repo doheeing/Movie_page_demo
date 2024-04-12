@@ -11,12 +11,13 @@ import ReactPaginate from "react-paginate";
 import "./MoviePage.style.css";
 import PopularFilter from "./Filter/PopularFilter";
 import GenresFilter from "./Filter/GenresFilter";
+import { useMovieRecommendQuery } from "../../hooks/useMovieDetail";
 
 const MoviePage = () => {
   const [query, setQuery] = useSearchParams();
   const [page, setPage] = useState(1);
   const keyword = query.get("q");
-  const pageTitle = keyword ? "Search" : "Movie";
+  const pageTitle = keyword ? keyword : "Movie";
   const [sortOrder, setSortOrder] = useState("");
   const [genresFilter, setGenresFilter] = useState("");
   const { data, isLoading, isError, error } = useSearchMovieQuery({
@@ -39,6 +40,7 @@ const MoviePage = () => {
     filteredMovies = filteredMovies.filter((movie) =>
       movie.genre_ids.includes(parseInt(genresFilter))
     );
+    console.log("genre_ids", data.genre_ids);
   }
 
   if (sortOrder) {
@@ -61,7 +63,13 @@ const MoviePage = () => {
 
   if (isLoading) {
     return (
-      <PropagateLoader color="#ee8282" cssOverride={{}} loading size={10} />
+      <PropagateLoader
+        color="#ee8282"
+        cssOverride={{}}
+        loading
+        size={10}
+        className="propagateLoader"
+      />
     );
   }
   if (isError) {
@@ -71,49 +79,52 @@ const MoviePage = () => {
   return (
     <div>
       <Container>
-        <Row>
-          <Col lg={4} xs={12}>
-            <div className="movie-page-wrap">
-              <div className="filter-wrap">
-                <div className="filter-box">
-                  <PopularFilter onSortChange={handleSortChange} />
-                  <GenresFilter onGenreChange={handleGenreChange} />
-                </div>
-                <div className="filter-total">전체 : {data.total_results}</div>
-              </div>
+        <div className="movie-page-wrap">
+          <div className="filter-wrap">
+            <div className="filter-box">
+              <GenresFilter onGenreChange={handleGenreChange} />
+            </div>
+          </div>
+        </div>
+        <Row className="moviepage-second-row">
+          <Col className="moviepage-second-row-first">
+            <div className="filter-total">
+              전체 : {data.total_results.toLocaleString()}편
             </div>
           </Col>
-          <Col lg={8} xs={12}>
-            <Row>
-              {filteredMovies.map((movie, index) => (
-                <Col key={index} lg={4} xs={12} className="movie-page-card">
-                  <MovieCard movie={movie} />
-                </Col>
-              ))}
-            </Row>
-            <ReactPaginate
-              onPageChange={handlePageClick}
-              pageRangeDisplayed={3}
-              marginPagesDisplayed={1}
-              pageCount={data?.total_pages} //전체페이지
-              forcePage={page - 1}
-              previousLabel="<"
-              nextLabel=">"
-              pageClassName="page-item"
-              pageLinkClassName="page-link"
-              previousClassName="page-item"
-              previousLinkClassName="page-link"
-              nextClassName="page-item"
-              nextLinkClassName="page-link"
-              breakLabel="..."
-              breakClassName="page-item"
-              breakLinkClassName="page-link"
-              containerClassName="pagination"
-              activeClassName="active"
-              renderOnZeroPageCount={null}
-            />
+          <Col className="moviepage-second-row-second">
+            <PopularFilter onSortChange={handleSortChange} />
           </Col>
         </Row>
+
+        <Row>
+          {filteredMovies.map((movie, index) => (
+            <Col key={index} lg={4} xs={12} className="movie-page-card">
+              <MovieCard movie={movie} />
+            </Col>
+          ))}
+        </Row>
+        <ReactPaginate
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={3}
+          marginPagesDisplayed={1}
+          pageCount={data?.total_pages} //전체페이지
+          forcePage={page - 1}
+          previousLabel="<"
+          nextLabel=">"
+          pageClassName="page-item"
+          pageLinkClassName="page-link"
+          previousClassName="page-item"
+          previousLinkClassName="page-link"
+          nextClassName="page-item"
+          nextLinkClassName="page-link"
+          breakLabel="..."
+          breakClassName="page-item"
+          breakLinkClassName="page-link"
+          containerClassName="pagination"
+          activeClassName="active"
+          renderOnZeroPageCount={null}
+        />
       </Container>
     </div>
   );

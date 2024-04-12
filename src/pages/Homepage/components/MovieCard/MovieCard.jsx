@@ -4,12 +4,8 @@ import Badge from "react-bootstrap/Badge";
 import { useMovieGenreQuery } from "../../../../hooks/useMovieGenre";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBullseye } from "@fortawesome/free-solid-svg-icons";
 import { faFire } from "@fortawesome/free-solid-svg-icons";
-import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faThumbsUp } from "@fortawesome/free-regular-svg-icons";
-import TopRatedBadge from "../../../../common/MovieSlider/TopRatedBadge";
 
 const MovieCard = ({ movie, index }) => {
   const { data: genreData } = useMovieGenreQuery();

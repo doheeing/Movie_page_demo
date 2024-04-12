@@ -26,3 +26,9 @@ img{
   background-color: black !important;
   padding-bottom: 10px;
 }
+.nav-menu{
+padding-top: 15px !important;
+}
+.nav-bar-search{
+    padding-top: 25px;
+}

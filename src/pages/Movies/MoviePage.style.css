@@ -1,3 +1,6 @@
+.filter-total {
+  font-family: "Pretendard-Regular";
+}
 .pagination {
   display: flex;
   justify-content: center;
@@ -25,14 +28,29 @@
   background-color: #ae180d !important;
   color: #222222;
 }
+.movie-page-card {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.moviepage-second-row {
+  margin: 50px;
+}
+.moviepage-second-row-first {
+  margin-left: 40px;
+}
+.moviepage-second-row-second {
+  display: flex;
+  justify-content: end;
+  margin-right: 40px;
+}
 .movie-page-card{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
+  margin-bottom: 28px;
 }
 @media only screen and (max-width: 767px) {
-.movie-page-card{
- padding-top: 10px;
+  .movie-page-card {
+    padding-top: 10px;
+  }
 }
-}
+
