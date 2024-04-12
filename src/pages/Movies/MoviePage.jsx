@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchMovieQuery } from "../../hooks/useSearchMovie";
 import { useSearchParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";
@@ -9,12 +9,16 @@ import { PropagateLoader } from "react-spinners";
 import Alert from "react-bootstrap/Alert";
 import ReactPaginate from "react-paginate";
 import "./MoviePage.style.css";
+import PopularFilter from "./Filter/PopularFilter";
+import GenresFilter from "./Filter/GenresFilter";
 
 const MoviePage = () => {
   const [query, setQuery] = useSearchParams();
   const [page, setPage] = useState(1);
   const keyword = query.get("q");
-
+  const pageTitle = keyword ? "Search" : "Movie";
+  const [sortOrder, setSortOrder] = useState("");
+  const [genresFilter, setGenresFilter] = useState("");
   const { data, isLoading, isError, error } = useSearchMovieQuery({
     keyword,
     page,
@@ -23,7 +27,37 @@ const MoviePage = () => {
   const handlePageClick = ({ selected }) => {
     setPage(selected + 1);
   };
+  const handleSortChange = (order) => {
+    setSortOrder(order);
+  };
+  const handleGenreChange = (genreId) => {
+    setGenresFilter(genreId);
+  };
 
+  let filteredMovies = data?.results || [];
+  if (genresFilter) {
+    filteredMovies = filteredMovies.filter((movie) =>
+      movie.genre_ids.includes(parseInt(genresFilter))
+    );
+  }
+
+  if (sortOrder) {
+    filteredMovies.sort((a, b) => {
+      if (sortOrder === "asc") {
+        return a.vote_average - b.vote_average;
+      } else {
+        return b.vote_average - a.vote_average;
+      }
+    });
+  }
+
+  useEffect(() => {
+    setPage(1);
+  }, [genresFilter]);
+
+  useEffect(() => {
+    setGenresFilter("");
+  }, [keyword]);
 
   if (isLoading) {
     return (
@@ -39,11 +73,19 @@ const MoviePage = () => {
       <Container>
         <Row>
           <Col lg={4} xs={12}>
-            filter
+            <div className="movie-page-wrap">
+              <div className="filter-wrap">
+                <div className="filter-box">
+                  <PopularFilter onSortChange={handleSortChange} />
+                  <GenresFilter onGenreChange={handleGenreChange} />
+                </div>
+                <div className="filter-total">전체 : {data.total_results}</div>
+              </div>
+            </div>
           </Col>
           <Col lg={8} xs={12}>
             <Row>
-              {data?.results.map((movie, index) => (
+              {filteredMovies.map((movie, index) => (
                 <Col key={index} lg={4} xs={12} className="movie-page-card">
                   <MovieCard movie={movie} />
                 </Col>

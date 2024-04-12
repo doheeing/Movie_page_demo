@@ -2,14 +2,16 @@
   /* position: relative; */
   margin: 10px;
   cursor: pointer;
+  z-index: 1;
 }
 .banner-movie-card:hover {
   transform: scale(1.1);
+  transition: 0.5s;
   z-index: 2;
 }
 
 @media only screen and (max-width: 767px) {
-  .banner-overlay {
+ .banner-movie-card {
     display: none;
   }
 }

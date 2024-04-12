@@ -7,6 +7,7 @@ import { PropagateLoader } from "react-spinners";
 
 const PopularMovieSlide = () => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
+  console.log("data", data)
   if (isLoading) {
     return (
       <PropagateLoader color="#ee8282" cssOverride={{}} loading size={10} />

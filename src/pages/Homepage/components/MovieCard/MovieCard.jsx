@@ -9,8 +9,9 @@ import { faFire } from "@fortawesome/free-solid-svg-icons";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faThumbsUp } from "@fortawesome/free-regular-svg-icons";
+import TopRatedBadge from "../../../../common/MovieSlider/TopRatedBadge";
 
-const MovieCard = ({ movie, rank }) => {
+const MovieCard = ({ movie, index }) => {
   const { data: genreData } = useMovieGenreQuery();
   const navigate = useNavigate();
 
@@ -22,8 +23,6 @@ const MovieCard = ({ movie, rank }) => {
     });
     return genreNameList;
   };
-
-  console.log("data", movie);
 
   const getMovieDetails = () => {
     navigate(`/movies/${movie?.id}`);

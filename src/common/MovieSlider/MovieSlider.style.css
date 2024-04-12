@@ -26,6 +26,12 @@
   .movie-slider {
     width: 300px !important;
   }
+.movie-slide{
+  display: flex;
+  flex-direction: row;
+  position: relative
+}
+
   /* .movie-slider :hover {
   display: flex !important;
   justify-content: center;

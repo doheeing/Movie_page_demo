@@ -18,11 +18,14 @@ const Footer = () => {
         </Col>
         <Col className="first-footer-second">
           <button>브랜드 바로가기</button>
-          <button className='second-button'>그룹 계열사 바로가기</button>
+          <button className="second-button">그룹 계열사 바로가기</button>
         </Col>
       </Row>
       <Row className="second-footer">
-        <Col>Copyright © Dohee Han All right reserved.</Col>
+        <Col className='copyright'>
+          <div>Copyright © </div>
+          <div>Dohee Han All right reserved.</div>
+        </Col>
       </Row>
     </div>
   );
