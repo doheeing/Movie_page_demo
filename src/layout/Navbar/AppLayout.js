@@ -19,7 +19,7 @@ const AppLayout = () => {
   };
   return (
     <div className="main-style">
-      <Navbar expand="lg" className="nav-style py-3 px-5" variant="dark">
+      <Navbar expand="lg" className="nav-style py-3 " variant="dark">
         <Container fluid>
           <Navbar.Brand href="/">
             <img src="img/logo.png" />
@@ -27,7 +27,7 @@ const AppLayout = () => {
           <Navbar.Toggle aria-controls="navbarScroll" className="toggle" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
-              className="me-auto my-2 my-lg-0"
+              className="me-auto my-2 my-lg-0 nav-aligns"
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
@@ -41,7 +41,7 @@ const AppLayout = () => {
             <Form className="d-flex nav-bar-search" onSubmit={searchByKeyword}>
               <Form.Control
                 type="search"
-                placeholder="Search"
+                placeholder="오늘은 어떤 영화를?"
                 className="me-2"
                 aria-label="Search"
                 value={keyword}
