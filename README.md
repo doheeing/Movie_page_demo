@@ -23,17 +23,9 @@
 <h2>사이트 미리보기</h2>
 
 
-![homepage](img/homepage.png)
-![loginpage](img/login.png)
-![detailpage](img/detail.png)
-![search](img/search.png)
-
 
 <h3>반응형</h3>
 ***
 
-![mobilemain](img/mobile_main.png)
-![mobilesidebar](img/mobile_side_bar.png)
-![mobiledetail](img/mobile.png)
 
 </div>
