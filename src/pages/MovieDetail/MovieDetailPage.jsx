@@ -5,8 +5,9 @@ import Col from "react-bootstrap/Col";
 import {
   useMovieDetailCastsQuery,
   useMovieDetailQuery,
-  useMovieDetailReviewsQuery,
   useMovieRecommendQuery,
+  // useMovieReviewQuery,
+  useVideoMoviesQuery,
 } from "../../hooks/useMovieDetail";
 import Badge from "react-bootstrap/Badge";
 import { PropagateLoader } from "react-spinners";
@@ -14,8 +15,9 @@ import Alert from "react-bootstrap/Alert";
 import { useParams } from "react-router-dom";
 import "./MovieDetailPage.style.css";
 import { useMovieGenreQuery } from "../../hooks/useMovieGenre";
-// import MovieReviews from "./MovieReviews/MovieReviews";
+import YouTube from "react-youtube";
 import MovieRecommandation from "./MovieRecommandation/MovieRecommandation";
+// import MovieReviews from "./MovieReviews/MovieReviews";
 
 const MovieDetailPage = () => {
   const { id } = useParams();
@@ -23,6 +25,9 @@ const MovieDetailPage = () => {
   const { data: genreData } = useMovieGenreQuery();
   const { data: CreditsData } = useMovieDetailCastsQuery(id);
   const { data: recommend } = useMovieRecommendQuery({ id });
+  const { data: videoKey } = useVideoMoviesQuery(id);
+
+  // const { data: review } = useMovieReviewQuery({ id });
 
   if (isLoading) {
     return (
@@ -46,7 +51,7 @@ const MovieDetailPage = () => {
       >
         <div className="blur-area">
           <Container className="container">
-            <Row className=".movie-detail-page-first-row">
+            <Row className="movie-detail-page-first-row">
               <Col lg={6} sm={12} className="detail-img-area">
                 <img
                   src={`https://media.themoviedb.org/t/p/w600_and_h900_bestv2${data?.backdrop_path}`}
@@ -82,18 +87,36 @@ const MovieDetailPage = () => {
                 <div className="detail-overview">{data?.overview}</div>
                 <div className="detail-base-line">
                   <div>개봉일 : {data?.release_date}</div>
-                  <div>★ {data?.vote_average.toFixed(1)}</div>
+                  <div className="detail-vote-average-line">
+                    ★ {data?.vote_average.toFixed(1)}
+                  </div>
                 </div>
               </Col>
             </Row>
-            <Row>{/* <MovieReviews /> */}</Row>
             <Row className="movie-detail-recommend">
-
+              <div className="movie-detail-recommend-title">
+                {data?.title}을 보신 분에게 추천하는 영화 !
+              </div>
               <MovieRecommandation
                 recommend={recommend}
                 className="movie-recommend-area"
               />
             </Row>
+
+            <Row className="movie-detail-video">
+              <div className="movie-detail-recommend-title">
+                {data?.title}을 미리 볼까요 ?
+              </div>
+              {videoKey?.length > 0 && (
+                <YouTube
+                  videoId={videoKey[0].key}
+                  className="movie-video-area"
+                />
+              )}
+            </Row>
+            {/* <Row className="movie-detail-review">
+              <MovieReviews review={review} className="movie-review-area" />
+            </Row> */}
           </Container>
           <div></div>
         </div>

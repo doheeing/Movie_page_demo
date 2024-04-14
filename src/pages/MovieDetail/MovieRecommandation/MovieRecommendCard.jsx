@@ -34,11 +34,11 @@ const MovieRecommendCard = ({ item }) => {
       >
         <div className="overlay">
           <div className="movie-text">
-            <h1>{item.title}</h1>
+            <h1>{item?.title}</h1>
           </div>
         </div>
-        <div>{item.title}</div>
       </div>
+      <div className="movie-card-title">{item?.title}</div>
     </div>
   );
 };

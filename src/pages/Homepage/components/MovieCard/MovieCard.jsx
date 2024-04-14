@@ -25,7 +25,7 @@ const MovieCard = ({ movie, index }) => {
   };
 
   return (
-    <div>
+    <div className="movie-card-body">
       <div
         style={{
           backgroundImage:
@@ -75,6 +75,7 @@ const MovieCard = ({ movie, index }) => {
           </div>
         </div>
       </div>
+      <div className="movie-card-under-title">{movie.title} </div>
     </div>
   );
 };

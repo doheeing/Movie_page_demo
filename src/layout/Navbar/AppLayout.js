@@ -22,7 +22,7 @@ const AppLayout = () => {
       <Navbar expand="lg" className="nav-style py-3 px-5" variant="dark">
         <Container fluid>
           <Navbar.Brand href="/">
-            <img src="img/main_logo.jpg" />
+            <img src="img/logo.png" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" className="toggle" />
           <Navbar.Collapse id="navbarScroll">

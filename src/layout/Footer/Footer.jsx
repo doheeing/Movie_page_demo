@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import "./Footer.style.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -21,14 +21,17 @@ const Footer = () => {
           <button className="second-button">그룹 계열사 바로가기</button>
         </Col>
       </Row>
+      <Row className="logo-footer">
+        <img src="img/logo.png" />
+      </Row>
       <Row className="second-footer">
-        <Col className='copyright'>
+        <Col className="copyright">
           <div>Copyright © </div>
           <div>Dohee Han All right reserved.</div>
         </Col>
       </Row>
     </div>
   );
-}
+};
 
-export default Footer
+export default Footer;

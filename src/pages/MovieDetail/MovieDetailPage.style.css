@@ -1,28 +1,19 @@
-main-body {
-  height: 180vh;
-}
 .detail-movie-poster {
-  height: 150vh;
+  height: max-content;
   width: 100vw;
   backdrop-filter: blur(10px);
   margin: 0;
+  background-size: cover;
 }
 .blur-area {
   width: 100%;
-  height: 100%;
+  height: 120%;
   background-color: rgba(13, 13, 13, 0.406);
   backdrop-filter: blur(50px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
+
 .movie-detail-page-first-row {
+  padding-top: 100px;
   margin-bottom: 150px;
 }
 .second-col {
@@ -74,15 +65,76 @@ main-body {
 .movie-recommend-area {
   margin-top: 30px;
 }
-.recommend-title{
-   font-family: "GmarketSansMedium";
+.recommend-title {
+  font-family: "GmarketSansMedium";
   font-size: 25px;
 }
-.movie-detail-recommend{
+.movie-detail-recommend {
   height: 40vh;
-  width: 100vw;
   margin-top: 50px !important;
   z-index: 2 !important;
   padding-top: 30px;
   border-top: 1px solid rgba(130, 128, 128, 0.181);
+}
+.movie-detail-recommend-title {
+  font-size: 30px;
+  font-family: "BagelFatOne-Regular";
+  text-align: center;
+  margin-bottom: 20px;
+}
+.movie-video-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.movie-detail-video {
+  height: fit-content;
+  margin-top: 50px !important;
+  padding-bottom: 50px !important;
+  padding-top: 30px;
+  border-top: 1px solid rgba(130, 128, 128, 0.181);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 767px) {
+  .movie-detail-page-first-row{
+    padding-top: 50px;
+  }
+  .detail-img {
+    width: 80vw;
+    margin-bottom: 30px;
+  }
+  .detail-title {
+    font-family: "GmarketSansMedium";
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+  .second-col {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .badge-area {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .people-list{
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .detail-base-line{
+    margin-top: 10px;
+  }
+  .detail-vote-average-line{
+    margin-top: 10px;
+    font-size: 25px;
+  }
+  .movie-detail-recommend-title{
+    font-size: 25px;
+  }
+
 }

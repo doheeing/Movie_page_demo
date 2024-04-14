@@ -14,7 +14,7 @@ const GenresFilter = ({ onGenreChange }) => {
     <div className="genre-filter-button-area">
       <Row>
         {genres?.map((genre) => (
-          <Col lg={2} sm={6} className="genre-filter-button-area-col">
+          <Col lg={2} xs={6} className="genre-filter-button-area-col">
             <button
               onClick={(e) => onGenreChange(e.target.value)}
               key={genre.id}

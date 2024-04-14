@@ -6,6 +6,7 @@ import "react-multi-carousel/lib/styles.css";
 
 
 const MovieSlider = ({ title, movies, responsive }) => {
+  
   return (
     <div className="movie-slider-area">
       <h3 className="movie-slider-text">{title}</h3>

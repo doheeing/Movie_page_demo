@@ -22,25 +22,25 @@ const fetchMovieDetail = async (movieId) => {
   return response.data;
 };
 
-export const useMovieDetailQuery = (movieId) => {
+export const useMovieDetailQuery = (id) => {
   return useQuery({
-    queryKey: ["movie-detail", movieId],
-    queryFn: () => fetchMovieDetail(movieId),
-    enabled: !!movieId,
+    queryKey: ["movie-detail", id],
+    queryFn: () => fetchMovieDetail(id),
+    enabled: !!id,
   });
 };
-// const fetchMovieDetailReviews = async (movieId) => {
-//   const response = await api.get(`/movie/${movieId}/reviews?language=ko`);
-//   return response.data;
-// };
-// export const useMovieDetailReviewsQuery = (movieId) => {
-//   return useQuery({
-//     queryKey: ["movie-detail-reviews", movieId],
-//     queryFn: () => fetchMovieDetailReviews(movieId),
-//     enabled: !!movieId,
-//     select: (result) => result.data,
-//   });
-// };
+
+const fetchMovieReview = ({ id }) => {
+  return api.get(`/movie/${id}/reviews`);
+};
+
+export const useMovieReviewQuery = ({ id }) => {
+  return useQuery({
+    queryKey: ["movie-review", id],
+    queryFn: () => fetchMovieReview({ id }),
+    select: (result) => result.data.results,
+  });
+};
 
 const fetchMovieDetailCasts = async (movieId) => {
   const response = await api.get(`/movie/${movieId}/credits?language=ko`);
@@ -55,6 +55,7 @@ export const useMovieDetailCastsQuery = (movieId) => {
 };
 const fetchMovieRecommend = ({ id }) => {
   return api.get(`/movie/${id}/recommendations?language=ko`);
+  
 };
 
 export const useMovieRecommendQuery = ({ id }) => {
@@ -63,3 +64,15 @@ export const useMovieRecommendQuery = ({ id }) => {
     queryFn: () => fetchMovieRecommend({ id }),
     select: (result) => result.data.results,
   })};
+
+  const fetchVideoMovie = (id)=>{
+    return api.get(`/movie/${id}/videos`)
+}
+
+export const useVideoMoviesQuery=(id)=>{
+    return useQuery({
+        queryKey:['movie-video',id],
+        queryFn:()=>fetchVideoMovie(id),
+        select:(result)=>result.data.results,
+    })
+  }

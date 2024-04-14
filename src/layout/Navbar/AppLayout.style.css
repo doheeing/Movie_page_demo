@@ -20,7 +20,7 @@ height: 100vh;
   font-family: 'Pretendard-Regular';
 }
 img{
-    width: 100px;
+    width: 110px;
 }
 .collapse{
   background-color: black !important;
@@ -28,7 +28,8 @@ img{
 }
 .nav-menu{
 padding-top: 15px !important;
+text-align: center;
 }
 .nav-bar-search{
-    padding-top: 25px;
+    padding-top: 10px;
 }
