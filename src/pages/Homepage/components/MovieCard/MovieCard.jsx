@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFire } from "@fortawesome/free-solid-svg-icons";
 import { faThumbsUp } from "@fortawesome/free-regular-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const MovieCard = ({ movie, index }) => {
   const { data: genreData } = useMovieGenreQuery();
@@ -63,12 +64,12 @@ const MovieCard = ({ movie, index }) => {
               ))}
               <div className="vote">
                 <div className="vote-rate">
-                  <FontAwesomeIcon icon={faThumbsUp} />
-                  &nbsp;{Math.round(movie.vote_average * 10) / 10}&nbsp;/ 10
+                  <FontAwesomeIcon icon={faStar} />
+                  &nbsp;평점 : {Math.round(movie.vote_average * 10) / 10}&nbsp;
                 </div>
                 <div className="popular">
                   <FontAwesomeIcon icon={faFire} />
-                  &nbsp;Popularity : {Math.round(movie.popularity * 10) / 10}K
+                  &nbsp;누적관객수 : {Math.round(movie.popularity)}만명
                 </div>
               </div>
             </div>

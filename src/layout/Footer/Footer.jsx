@@ -25,10 +25,14 @@ const Footer = () => {
         <img src="img/logo.png" />
       </Row>
       <Row className="second-footer">
-        <Col className="copyright">
+        <div className="copyright">
           <div>Copyright © </div>
           <div>Dohee Han All right reserved.</div>
-        </Col>
+        </div>
+        <div className="github">
+          <div>GitHub</div>
+          <div className="mx-3">https://github.com/doheeing</div>
+        </div>
       </Row>
     </div>
   );
