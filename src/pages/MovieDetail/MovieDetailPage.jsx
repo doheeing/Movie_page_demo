@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -23,13 +23,17 @@ import MovieRecommandation from "./MovieRecommandation/MovieRecommandation";
 
 const MovieDetailPage = () => {
   const { id } = useParams();
-  const { data, isLoading, isError, error } = useMovieDetailQuery(id);
+  const { data, isLoading, isError, error, refetch } = useMovieDetailQuery(id);
   const { data: genreData } = useMovieGenreQuery();
   const { data: CreditsData } = useMovieDetailCastsQuery(id);
   const { data: recommend } = useMovieRecommendQuery({ id });
   const { data: videoKey } = useVideoMoviesQuery(id);
 
   // const { data: review } = useMovieReviewQuery({ id });
+
+  useEffect(() => {
+    refetch();
+  }, [id, refetch]);
 
   if (isLoading) {
     return (
@@ -40,6 +44,7 @@ const MovieDetailPage = () => {
     return <Alert variant="danger">{error.message}</Alert>;
   }
 
+  console.log("data".data);
   return (
     <div className="main-body">
       <div
