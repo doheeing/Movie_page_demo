@@ -22,7 +22,12 @@
 
 <h2>사이트 미리보기</h2>
 
-
+![homepage](Readmeimg/hompage.png)
+![homepage2](Readmeimg/hompage_hover.png)
+![moviedetailpage](Readmeimg/moviedetailpage.png)
+![moviepage](Readmeimg/moviepage.png)
+![moviesearchpage](Readmeimg/moviesearchpage.png)
+![moviesortpage](Readmeimg/moviesortpage.png)
 
 <h3>반응형</h3>
 ***
