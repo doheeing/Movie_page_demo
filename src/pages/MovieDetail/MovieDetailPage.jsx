@@ -26,7 +26,7 @@ const MovieDetailPage = () => {
   const { data, isLoading, isError, error, refetch } = useMovieDetailQuery(id);
   const { data: genreData } = useMovieGenreQuery();
   const { data: CreditsData } = useMovieDetailCastsQuery(id);
-  const { data: recommend } = useMovieRecommendQuery({ id });
+  const { data: recommend, refetch : RecommandRefetch } = useMovieRecommendQuery({ id });
   const { data: videoKey } = useVideoMoviesQuery(id);
 
   // const { data: review } = useMovieReviewQuery({ id });
@@ -107,6 +107,7 @@ const MovieDetailPage = () => {
               </div>
               <MovieRecommandation
                 recommend={recommend}
+                refetch={RecommandRefetch}
                 className="movie-recommend-area"
               />
             </Row>

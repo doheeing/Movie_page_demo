@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./MovieRecommandation.style.css";
 import MovieRecommendCard from "./MovieRecommendCard";
 import Carousel from "react-multi-carousel";
@@ -18,11 +18,10 @@ const MovieRecommandation = ({ recommend }) => {
   //   if (isError) {
   //     return <Alert variant="danger">{error.message}</Alert>;
   //   }
+
   return (
     <div className="detail-recommend-wrap">
-      {recommend?.length === 0 ? (
-        <div className="recommend-none">추천영화가 없습니다.</div>
-      ) : (
+      {recommend && recommend.length > 0 ? (
         <div>
           <Carousel
             infinite={true}
@@ -36,6 +35,8 @@ const MovieRecommandation = ({ recommend }) => {
             ))}
           </Carousel>
         </div>
+      ) : (
+        <div className="recommend-none">추천영화가 없습니다.</div>
       )}
     </div>
   );
